@@ -1,0 +1,1322 @@
+// PROYECTO GRUPAL N2
+// ESTRUCTURAS SELECTIVAS
+// EJERCICIO 1 
+// ¿Siguiendo la prioridad de operadores, convierta a expresión matemática,
+// resuelva e indique en cuál tipo de variable almacenará el resultado de las
+// siguientes expresiones:
+// entrada: v1,v2,v3,v4,v5
+// proceso "poner los operadores y el resultado presentarlo"
+Funcion selectivas1()
+	Definir v1,v4,v5 Como Logico
+	Definir v2,v3 Como Real
+	v1 <- (5+3*2)+9>3*5*14 MOD 3
+	v2 <- 2*(4-10+8)/2*36*(1/2)
+	v3 <- 260/12+54 MOD 3-85 MOD 7
+	v4 <- (48<2*3) O (2*7<12)
+	v5 <- ((8>2) O (932<23)) Y 4==2
+	Escribir 'v1=',v1
+	Escribir 'v2=',v2
+	Escribir 'v3=',v3
+	Escribir 'v4=',v4
+	Escribir 'v5=',v5
+FinFuncion
+
+// EJERCICIO 2
+// Dados dos (2) números calcule la 
+// suma, resta, multiplicación, división y módulo.
+// entrada: x,y
+// s,r,m,d
+// "ingrese el valor de x"
+// "ingrese el valor de y"
+// s = x+y
+// r = x-y
+// m = x*y
+// d = x/y
+Funcion selectivas2()
+	Definir x,ye Como Entero
+	Definir s,r,m,d Como Real
+	Escribir 'ingrese el valor de x'
+	Leer x
+	Escribir 'ingrese el valor de y'
+	Leer ye
+	s <- x+ye
+	Escribir x,'+',ye,'=',s
+	r <- x-ye
+	Escribir x,'-',ye,'=',r
+	m <- x*ye
+	Escribir x,'*',ye,'=',m
+	d <- x/ye
+	Escribir x,'/',ye,'=',d
+FinFuncion
+
+// EJERCICIO 3
+// Dados tres (3) números, 
+// Hacer una aplicación que calcule la resolvente.
+// entrada: a,b,c
+Funcion selectivas3()
+	Definir a,b,c,discriminante Como Real
+	Definir x1,x2 Como Real
+	Escribir 'ingrese el valor de a'
+	Leer a
+	Escribir 'ingrese el valor de b'
+	Leer b
+	Escribir 'ingrese el valor de c'
+	Leer c
+	discriminante <- b^2-4*a*c
+	// Verificar casos
+	Si discriminante>0 Entonces
+		x1 <- (-b+raiz(discriminante))/(2*a)
+		x2 <- (-b-raiz(discriminante))/(2*a)
+		Escribir 'Las soluciones son:',x1,'y',x2
+	SiNo
+		Si discriminante=0 Entonces
+			x <- -b/(2*a)
+			Escribir 'La solución es:',x
+		SiNo
+			Escribir 'No hay soluciones reales'
+		FinSi
+	FinSi
+FinFuncion
+
+// EJERCICIO 4 
+// Dados dos (2) lados de un triángulo en cm, 
+// calcular la hipotenusa del mismo.
+// entrada: a,b,h como real
+// "ingrese el valor del lado a"
+// "ingrese el valor del lado b"
+// h = raiz((a*a)+(b*b))
+// escribir "la hipotenusa es: ", h
+Funcion selectivas4()
+	definir hipotenusa, lado1, lado2 como entero
+	// Pedir al usuario ingresar los lados del triángulo
+	Escribir 'Ingrese el primer lado del triángulo en cm:'
+	Leer lado1
+	Escribir 'Ingrese el segundo lado del triángulo en cm:'
+	Leer lado2
+	// Calcular la hipotenusa
+	hipotenusa <- raiz(lado1*lado1+lado2*lado2)
+	// Mostrar el resultado
+	Escribir 'La hipotenusa del triángulo es:',hipotenusa,'cm'
+FinFuncion
+
+// EJERCICIO 5
+// Dado un (1) número, imprimir 0 si es par y 1 si es impar
+// entrada: n
+// "digite un valor"
+// proceso: si n  MOD 2=0
+// escribir "es par"
+// sino si "es impar" 
+Funcion selectivas5()
+	Definir n Como Entero
+	Escribir 'digite un numero'
+	Leer n
+	Si n MOD 2=0 Entonces
+		Escribir 'es par'
+	SiNo
+		Escribir 'es impar'
+	FinSi
+FinFuncion
+
+// EJERICCIO 6
+Funcion selectivas6()
+	Definir numeroBinario,digito,cantidadUnos,bitParidad Como Real
+	Escribir 'ingrese los 4 digitos binarios'
+	Leer numeroBinario
+	cantidadUnos <- 0
+	Para digito<-0 Hasta numeroBinario Hacer
+		Si (digito)=(1) Entonces
+			cantidadUnos <- cantidadUnos+1
+		FinSi
+	FinPara
+	bitParidad <- cantidadUnos MOD 2
+	Escribir 'El bit de paridad es:',bitParidad
+FinFuncion
+
+// EJERCICIO 7
+// Dado un (1) número de cuatro (4) dígitos imprimirlo por separado en unidades,decenas,
+// centenas y unidades de mil.
+// ENTRADA: numero
+// uni,dec,cen,mil
+// "ingrese el mumero"
+// mil = numero/1000
+// centenas = (numero/100) MOD 10
+// decenas = (numero/10) MOD 10
+// unidades = numero MOD 10
+// salida: escribir la unidad, decena, centena y unidad de mil
+Funcion selectivas7()
+	Definir n Como Entero
+	Definir cen Como entero
+	Definir uni,dec,mil Como entero
+	Escribir 'ingrese el digito binario de 4 numeros'
+	Leer n
+	mil <- trunc(n/1000)
+	cen <- trunc(n/100) MOD 10
+	dec <- (n/10) MOD 10
+	uni <- n MOD 10
+	Escribir 'unidad de mil: ',mil
+	Escribir 'centena: ',cen
+	Escribir 'decena: ',dec
+	Escribir 'unidad: ',uni
+FinFuncion
+
+// EJERCICIO 8 
+// Dado un carácter indicar si es un digito 
+// o una consonante o un carácter especial.
+// entrada: caracter "como caracter"
+// "ingrese caracter"
+// proceso: si car >= "0" y car <= "9"
+// "es digito"
+// sino si car >= "b" y car <= "d" o car >="f" y car <= "h" o car >= "j"  y car <= "n" o car >= "p" y car <= "t" o car >= "v" y car <= "z"
+// "es caracter"
+// sino si car >= " " y car <= "/"
+// "es caracter especial"
+Funcion selectivas8()
+	Definir car Como Caracter
+	Escribir 'ingrese un caracter'
+	Leer car
+	Si car>='0' Y car<='9' Entonces
+		Escribir 'es caracter'
+	SiNo
+		Si car>='b' Y car<='d' O car>='f' Y car<='h' O car>='j' Y car<='n' O car>='p' Y car<='t' O car>='v' Y car<='z' Entonces
+			Escribir 'es consonante'
+		SiNo
+			Si car<=' ' Y car<='/' Entonces
+				Escribir 'es caracter especial'
+			SiNo
+				Escribir 'el caracter ingresaso esta fuera de rango'
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+// EJERCICIO 9
+// Dado dos caracteres indicar si el primer carácter es igual,
+// mayor o menor que el segundo
+// entrada: c1,c2  "como caracter"
+// "ingrese el primer caracter"
+// "ingrese el segundo caracter"
+// si c1 > c2
+// "el carcter c1: ",c1," es mayor que c2: ",c2
+// sino si c1 < c2
+// "el caracter de c1: ",c1," es menor a c2: ",c2
+// SiNo
+// c1," es igual a: ",c2
+Funcion selectivas9()
+	Definir c1,c2 Como Caracter
+	Escribir 'ingrese el primer caracter'
+	Leer c1
+	Escribir 'ingrese el segundo caracter'
+	Leer c2
+	Si c1>c2 Entonces
+		Escribir 'c1: ',c1,' es mayor a c2: ',c2
+	SiNo
+		Si c1<c2 Entonces
+			Escribir 'c1: ',c1,' es menor a c2: ',c2
+		SiNo
+			Escribir c1,' es igual a c2: ',c2
+		FinSi
+	FinSi
+FinFuncion
+
+// EJERCICIO 10
+// Dada una frase cualquiera presentarla en mayúscula y minuscula
+// entrada: frase , fMayus, "fMinus como caracter"
+// "ingrese frase"
+// fMyus = Mayusculas(fMayus)
+// fMinus = Minusculas(fMinus)
+// "la frase ingresada es: ",frase 
+// "la frase en mayuscula es: ",fMyus
+// "la frase en minuscula: ",fMinus
+Funcion selectivas10()
+	Definir frase,fMayus,fMinus Como Caracter
+	Escribir 'ingrese la frase'
+	Leer frase
+	fMayus <- Mayusculas(frase)
+	fMinus <- Minusculas(frase)
+	Escribir 'la frase ingresada es: ',frase
+	Escribir 'la frase en mayuscula es: ',fMayus
+	Escribir 'la frase en minuscula es: ',fMinus
+FinFuncion
+
+// CONDICIONALES
+Funcion condicional1()
+	Definir año,mes,dia Como Entero
+	// Pedir al usuario ingresar una fecha
+	Escribir 'Ingrese una fecha:'
+	Escribir 'Año (aaaa):'
+	Leer año
+	Escribir 'Mes (mm):'
+	Leer mes
+	Escribir 'Día (dd):'
+	Leer dia
+	// Verificar si el año es bisiesto
+	Si (año MOD 400==0) O ((año MOD 4==0) Y (año MOD 100<>0)) Entonces
+		Escribir 'El año',año,'es un año bisiesto.'
+	SiNo
+		Escribir 'El año ',año,' no es un año bisiesto.'
+	FinSi
+FinFuncion
+
+// Indicar si una palabra es palindroma
+Funcion condicionales2()
+	Definir palabra,palabra2 Como Caracter
+	palabra2 <- ''
+	Definir n,i Como Entero
+	Escribir 'Ingrese un numero'
+	Leer palabra
+	n <- longitud(palabra)
+	Para i<-n-1 Hasta 0 Con Paso -1 Hacer
+		palabra2 <- palabra2+Subcadena(palabra,i,i)
+	FinPara
+	Si palabra=palabra2 Entonces
+		Escribir 'La numero es capicua'
+	SiNo
+		Escribir 'La numero no es capicua'
+	FinSi
+FinFuncion
+
+// ESTRUCTURAS CONDICIONALES
+// EJERCICIO 3.0
+// Cree un algoritmo que tome por entrada las horas y minutos de un día y dé comoresultado
+// su equivalente en segundos.
+//ebntrada: horas, minutos segundos 
+// HorasEnSegunndos, minutosEnSegundos
+// escrbir "ingrese la cantidad de horas
+// horas
+// ingrese la cantidad de minutos?
+// minutos
+// horasEnSegundos = horas*3600
+// minutosEnSegundos = minutos*60
+// adicional si lo pide xdxd
+// segundos = horasEnSegundos + minutosEnSegundos
+Funcion condicionales3_0()
+	Definir hor,min,seg Como Real
+	Definir horasEnSeg,minutosEnSeg Como Real
+	Escribir 'ingrese la cantidad de horas'
+	Leer hor
+	Escribir 'ingrese la cantidad de minutos'
+	Leer min
+	horasEnSeg <- hor*3600
+	minmutosEnSeg <- min*60
+	Escribir 'la cantidad de ',hor,' hora/s en segundos es: ',horasEnSeg
+	Escribir 'la cantidad de ',min,' minuto/s en segundos es: ',minutosEnSeg
+	// extra
+	seg <- horasEnSeg+minmutosEnSeg
+FinFuncion
+
+// EJERCICIO 3.1
+// Para un valor entero positivo que representa una cantidad en segundos, indicarsu
+// equivalente en minutos, horas y días.
+// entrada: segundos
+// segundosEnMinutos, segundosEnHoras, segundosEnDias
+// escribbbb "ingrese la cantidad de numeros a covertir
+// leer segundos
+// segundosEnMinutos = segundos / 60
+// segundosEnHoras = segundos / 3600
+// segundosEnDias = segundos / 86400
+Funcion condicionales3_1()
+	Definir seg Como Entero
+	Definir segMin,segHor,segDias Como Real
+	Escribir 'ingrese la cantidad de segundos'
+	Leer seg
+	segMin <- seg/60
+	segHor <- seg/3600
+	segDias <- seg/86400
+	Escribir 'la cantidad de ',seg,' segundo/s en minutos es: ',segMin
+	Escribir 'la cantidad de ',seg,' segundo/s en horas es: ',segHor
+	Escribir 'la cantidad de ',seg,' segundo/s en dias es: ',segDias
+FinFuncion
+
+// EJERCICIO 4 CONDICIONALEZZZ
+// entrada: a, b ,c d
+// escribbb "ingrese el valor de a
+// leer a 
+// escrr "ingrese el valor de b
+// leer b
+// essc "ingrese el valor de c
+// leer c
+// si a > b y a > c
+// escr "el mayor es la ª 
+// sino si b > a y b > c 
+// escr "el mayor es b
+// sino si c > a y c > b 
+// escrribir "el mayor es c
+// sino escribir son iguales
+Funcion condicionales4()
+	Definir a,b,c Como Entero
+	Escribir 'ingrese el valor de a'
+	Leer a
+	Escribir 'ingrese el valor de b'
+	Leer b
+	Escribir 'ingrese el valor de c'
+	Leer c
+	Si a<b Y a>c Entonces
+		Escribir 'el mayor es a'
+	SiNo
+		Si b>a Y b>c Entonces
+			Escribir 'el mayor es b'
+		SiNo
+			Si c>a Y c>b Entonces
+				Escribir 'el mayor es c'
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+Funcion Condicionales5()
+	// Pedir al usuario ingresar la hora de entrada y la hora de salida
+	definir horaEntrada, minutosEntrada , montoPagar,horasCompletas como real
+	definir horaSalida, minutosSalida como real
+	definir minutosTotalesEntrada, minutosTotalesSalida, tiempoTranscurridoMinutos como real
+	Escribir 'Ingrese la hora de entrada (horas y minutos separados por espacio):'
+	Leer horaEntrada,minutosEntrada
+	Escribir 'Ingrese la hora de salida (horas y minutos separados por espacio):'
+	Leer horaSalida,minutosSalida
+	// Calcular el tiempo transcurrido en minutos
+	minutosTotalesEntrada <- (horaEntrada*60)+minutosEntrada
+	minutosTotalesSalida <- (horaSalida*60)+minutosSalida
+	tiempoTranscurridoMinutos <- minutosTotalesSalida-minutosTotalesEntrada
+	// Calcular el monto a pagar
+	montoPagar <- 0
+	Si tiempoTranscurridoMinutos<30 Entonces
+		montoPagar <- 0.5
+	SiNo
+		// Calcular el número de horas completas
+		horasCompletas <- tiempoTranscurridoMinutos/60
+		montoPagar <- horasCompletas*1.5
+	FinSi
+	// Mostrar el monto a pagar
+	Escribir 'El monto a pagar es:',montoPagar
+FinFuncion
+
+// EJERCICIO 6
+// Ejercicio 6.
+// El IMC resulta de la división de la masa del individuo (en kilogramos) entre el cuadrado de
+// la estatura (en metros). El índice de masa corporal es un indicadordel peso de una
+// persona en relación con su altura.
+// Clasificación del IMC de acuerdo con la OMS de la ONU:
+// a. Menor a 16: Criterio de ingreso.
+// b. 16 a 16.9: infra peso.
+// c.17 a 18.4: bajo peso.
+// d. 18.5 a 24.9: peso normal.
+// e. 25 a 29.9: sobrepeso.
+// f. 30 a 34.9: obesidad pre-mórbida.
+// g. 40 a 45: obesidad mórbida.
+// h. Mayor a 45: obesidad híper-mórbida.
+// Dado el peso de una persona en libras (1 libra = 0,453592 Kg) y su estatura en
+// centímetros, calcule su IMC e indique como salida el peso en kilogramos, el valorde IMC
+// de la persona y la categoría en la cual fue clasificado.
+// entrada lb, cm
+// kg, m covPeso
+// "ingrese el peso en libras"
+// "ingrese la altura en centimetros"
+// kg = lb/2.205
+// m = cm/100
+// convPeso = kg/(m*m)
+// si convPeso < 16 
+// " criterio de ingreso"
+// sino si convPeso >= 16 y convPeso < 16.9
+// "infra peso"
+// sino si convPeso >= 17 y convPeso <= 18.4
+// "bajo peso"
+// asi segir con lo demas
+Funcion  Condicionales6()
+	Definir pesoLibras,pesoKilogramos,estaturaCentimetros,estaturaMetros,IMC Como real
+	Definir categoria Como Caracter
+    // Pedir al usuario ingresar el peso en libras y la estatura en centímetros
+    Escribir "Ingrese el peso en libras:"
+    Leer pesoLibras
+    
+    Escribir "Ingrese la estatura en centímetros:"
+    Leer estaturaCentimetros
+    
+    // Convertir el peso de libras a kilogramos
+    pesoKilogramos <- pesoLibras * 0.453592
+    
+    // Convertir la estatura de centímetros a metros
+    estaturaMetros <- estaturaCentimetros / 100
+    
+    // Calcular el IMC
+    IMC <- pesoKilogramos / (estaturaMetros * estaturaMetros)
+    
+    // Determinar la categoría del IMC
+    categoria <- ""
+    
+    Si IMC < 16 Entonces
+        categoria <- "Criterio de ingreso"
+    Sino Si IMC >= 16 y IMC <= 16.9 Entonces
+			categoria <- "Infra peso"
+		Sino Si IMC >= 17 y IMC <= 18.4 Entonces
+				categoria <- "Bajo peso"
+			Sino Si IMC >= 18.5 y IMC <= 24.9 Entonces
+					categoria <- "Peso normal"
+				Sino Si IMC >= 25 y IMC <= 29.9 Entonces
+						categoria <- "Sobrepeso"
+					Sino Si IMC >= 30 y IMC <= 34.9 Entonces
+							categoria <- "Obesidad pre-mórbida"
+						Sino Si IMC >= 35 y IMC <= 45 Entonces
+								categoria <- "Obesidad mórbida"
+							Sino
+								categoria <- "Obesidad híper-mórbida"
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	// Mostrar los resultados
+	Escribir "Peso en kilogramos:", pesoKilogramos
+	Escribir "IMC:", IMC
+	Escribir "Categoría:", categoria
+FinFuncion
+
+Funcion condicional7()
+	
+	// Declarar variables:
+    definir  dia, mes, diasTotales como entero 
+	
+	// Pedir la fecha al usuario:
+	Escribir"Ingrese el día del mes (1-31): "
+	Leer dia
+	Escribir"Ingrese el número del mes (1-12): "
+	Leer mes
+	
+	// Calcular los días totales:
+	diasTotales = (mes - 1) * 31 + dia - 1
+	
+	// Mostrar el número de días transcurridos:
+	Escribir"Desde el 1 de Enero de 2014 hasta ", dia, "/", mes, "/2014 han transcurrido ", diasTotales, " días."
+	
+FinFuncion
+
+// EJERCICIO 8
+// Solicitar un número entre el 1 y el 12 e imprimir el mes correspondiente a dicho número.
+// entrada: mes
+// proceso: d¿segun dia Hacer
+// "1":
+// escribir "enero"
+// "2":
+// "febrero"
+// etc etc.....
+Funcion condicionales8()
+	Definir mes Como Caracter
+	Escribir 'digite un numero del 1 al 12'
+	Leer mes
+	Si mes='1' Entonces
+		Escribir 'enero'
+	SiNo
+		Si mes='2' Entonces
+			Escribir 'febrero'
+		SiNo
+			Si mes='3' Entonces
+				Escribir 'marzo'
+			SiNo
+				Si mes='4' Entonces
+					Escribir 'abril'
+				SiNo
+					Si mes='5' Entonces
+						Escribir 'mayo'
+					SiNo
+						Si mes='6' Entonces
+							Escribir 'junio'
+						SiNo
+							Si mes='7' Entonces
+								Escribir 'julio'
+							SiNo
+								Si mes='8' Entonces
+									Escribir 'agosto'
+								SiNo
+									Si mes='9' Entonces
+										Escribir 'septiembre'
+									SiNo
+										Si mes='10' Entonces
+											Escribir 'octubre'
+										SiNo
+											Si mes='11' Entonces
+												Escribir 'noviembre'
+											SiNo
+												Si mes='12' Entonces
+													Escribir 'diciembre'
+												SiNo
+													Escribir 'EL DIGITO ESTA FUERA DE RANGO'
+												FinSi
+											FinSi
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
+// EJERICICO 9
+// En un almacén se hace un 20 MOD  de descuento a los clientes cuya compra supere los $1000,
+// se desea que realice un algoritmo el cual tome por entrada el monto apagar por el cliente
+// y arroje como salida el monto aplicando el descuento de ser necesario.
+// entrada: compra, desceunto, total
+// "ingrese la compra"
+// si compra > 1000
+// descuento = compra*0.20
+// total = compra-descuento
+// "la compra supera a los 1000 y se desceunta 20%"
+// "el valor a pagar es: ",total
+// sino "el valor a agar es: ",compra
+// finsi
+Funcion condicionales9()
+	Definir compra,descuento,total Como Real
+	Escribir 'digite el precio de la compra'
+	Leer compra
+	Si compra>1000 Entonces
+		descuento <- compra*0.20
+		total <- compra-descuento
+		Escribir 'la compra supera los 1000 por lo tanto se aplica un desceunto de 20%'
+		Escribir 'el valor total a pagar es: ',total
+	SiNo
+		Escribir 'el valor a pagar es: ',compra
+	FinSi
+FinFuncion
+
+// ejercicio 10
+// entrada: a,b
+// oper "como caracter"
+// sum,rest,mult,div,resto,trunc
+// "ingrese el valor de a
+// "ingrese el valor de b
+// "ingrese el operador
+// leer ""
+// si oper = "+"
+// sum = a+b
+// sino si oper = "-"
+// rest = a-b
+// sino si oper = "*"
+// mult = a*b
+// sino si oper = "/"
+// div = a/b
+// sino si oper = "%"
+// resto = a MOD b
+// sino si oper = "trunc"
+// trunc = trunc(a)/b
+// Ejercicio 10
+// Dado dos números y un operador matemático(+,-,*,/,mod,div) realizar la suma, resta,
+// multiplicación, división, resto y división entera(div) de los dos números según el operador
+// ingresado.
+Funcion condicionales10()
+	// entrada definimos variables
+	// numero1, numero2
+	// operador
+	Definir numero1,numero2 Como Real
+	Definir operador Como Caracter
+	Escribir 'Ingrese el primer número: '
+	Leer numero1
+	Escribir 'Ingrese el segundo número: '
+	Leer numero2
+	Escribir 'Ingrese el operador matemático (+, -, *, /, mod, div): '
+	Leer operador
+	// proceso
+	// numero1 + numero2
+	// numero1 - numero2
+	// numero1 * numero2
+	// numero1 / numero2
+	// numero1  MOD  numero2
+	// numero1 div numero2
+	Segun operador  Hacer
+		'+':
+			Escribir 'Suma: ',numero1+numero2
+		'-':
+			Escribir 'Resta: ',numero1-numero2
+		'*':
+			Escribir 'Multiplicación: ',numero1*numero2
+		'/':
+			Escribir 'División: ',numero1/numero2
+		'mod':
+			Escribir 'Resto: ',numero1 MOD numero2
+		'div':
+			Escribir 'División entera: ',numero1,div,numero2
+		De Otro Modo:
+			// salida
+			Escribir 'Operador inválido'
+	FinSegun
+FinFuncion
+
+// Funciones o SubAlgoritmo  del proyecto
+// SubAlgoritmo menus del proyecto
+Funcion opcion = presentarMenu(titulo,menu,lim)
+	Definir opcion Como Caracter
+	Definir pos Como Entero
+	Borrar Pantalla
+	Escribir titulo
+	Para pos<-0 Hasta lim-1 Hacer
+		Escribir menu[pos]
+	FinPara
+	Escribir '       Elija opción[1..',lim,']' Sin Saltar
+	Leer opcion
+FinFuncion
+
+// iterativas
+// EJERCICIO 1
+// Dado un número entero N, calcular e informar al usuario 
+// cuántos dígitos tiene dicho número
+//// Entrada de datos
+// Leer N
+//// Convertir N a valor absoluto
+// N <- abs(N)
+//// Convertir N a cadena de texto
+// N_str <- ConvertirATexto((N)
+//// Calcular cantidad de dígitos
+// cantidadDigitos <- Longitud(N_str)
+//// Imprimir resultado
+// Escribir "El número", N, "tiene", cantidadDigitos, "dígitos"
+Funcion iterativas1()
+	Definir n Como Entero
+	Definir cdn Como Caracter
+	Definir cantD Como Entero
+	Escribir 'ingrese un n cantidad de valor'
+	Leer n
+	// n=abs(n)
+	cdn <- ConvertirATexto(n)
+	cantD <- longitud(cdn)
+	Escribir 'el valor ingresado tiene ',cantD,' digitos'
+FinFuncion
+
+// EJERCICIO 2
+// ENTRADA: n, cd
+// "ingrese el numero en letas"
+// Indicar si una palabra es palindroma
+Funcion iterativas2()
+	Escribir 'iterativas 2-PALINDROMAS(CAPICUAS)'
+	Definir palabra,palabra2 Como Caracter
+	palabra2 <- ''
+	Definir n,i Como Entero
+	Escribir 'Ingrese un numero'
+	Leer palabra
+	n <- longitud(palabra)
+	Para i<-n-1 Hasta 0 Con Paso -1 Hacer
+		palabra2 <- palabra2+Subcadena(palabra,i,i)
+	FinPara
+	Si palabra=palabra2 Entonces
+		Escribir 'el numero ingresado es capicua'
+	SiNo
+		Escribir 'no es capicua'
+	FinSi
+FinFuncion
+
+Funcion iterativas3()
+	definir numero, divisor como entero
+	// Pedir al usuario ingresar un número
+	Escribir 'Ingrese un número:'
+	Leer numero
+	// Mostrar los divisores del número
+	Escribir 'Los divisores de ',numero,' son:'
+	Para divisor<-1 Hasta numero Hacer
+		Si numero MOD divisor==0 Entonces
+			Escribir divisor
+		FinSi
+	FinPara
+FinFuncion
+
+Funcion iterativa4()
+	Definir num, sumaDivisores, divisor Como Entero
+	// Pedir al usuario ingresar un número
+	Escribir 'Ingrese un número:'
+	Leer num
+	// Inicializar la variable de la suma
+	sumaDivisores <- 0
+	// Calcular la suma de los divisores del número
+	Para divisor<-1 Hasta num Hacer
+		Si num MOD divisor==0 Entonces
+			sumaDivisores <- sumaDivisores+divisor
+		FinSi
+	FinPara
+	// Mostrar la suma de los divisores
+	Escribir 'La suma de los divisores de ',num,' es:',sumaDivisores
+FinFuncion
+
+Funcion iterativa5()
+	Definir num ,cantidadDivisores, divisor Como Entero
+	// Pedir al usuario ingresar un número
+	Escribir 'Ingrese un número:'
+	Leer num
+	// Inicializar la variable de la cantidad de divisores
+	cantidadDivisores <- 0
+	// Calcular la cantidad de divisores del número
+	Para divisor<-1 Hasta num Hacer
+		Si num MOD divisor==0 Entonces
+			cantidadDivisores <- cantidadDivisores+1
+		FinSi
+	FinPara
+	// Mostrar la cantidad de divisores
+	Escribir 'La cantidad de divisores de ',num,' es:',cantidadDivisores
+FinFuncion
+
+Funcion iterativa6()
+	Definir num ,sumaDivisores , divisor Como Entero
+	// Pedir al usuario ingresar un número
+	Escribir 'Ingrese un número:'
+	Leer num
+	// Inicializar la variable para almacenar la suma de los divisores
+	sumaDivisores <- 0
+	// Calcular la suma de los divisores del número
+	Para divisor<-1 Hasta num-1 Hacer
+		Si num MOD divisor==0 Entonces
+			sumaDivisores <- sumaDivisores+divisor
+		FinSi
+	FinPara
+	// Verificar si el número es perfecto
+	Si sumaDivisores==num Entonces
+		Escribir 'El número ',num,' es perfecto'
+	SiNo
+		Escribir 'El número ',num,' no es perfecto'
+	FinSi
+FinFuncion
+
+Funcion iterativa7()
+	Definir num , contadorDivisores , divisor Como Entero
+	// Pedir al usuario ingresar un número
+	Escribir 'Ingrese un número:'
+	Leer num
+	// Inicializar la variable para contar los divisores
+	contadorDivisores <- 0
+	// Calcular la cantidad de divisores del número
+	Para divisor<-1 Hasta num Hacer
+		Si num MOD divisor==0 Entonces
+			contadorDivisores <- contadorDivisores+1
+		FinSi
+	FinPara
+	// Verificar si el número es primo
+	Si contadorDivisores==2 Entonces
+		Escribir 'El número ',num,' es primo'
+	SiNo
+		Escribir 'El número ',num,' no es primo'
+	FinSi
+FinFuncion
+
+// EJERCICIO 8
+// Construya un programa que dado un valor entero N, 
+// haga el cálculo de la función factorial
+// utilizando estructuras iterativas.
+Funcion iterativas8()
+	Escribir 'ejercicio 8 iterativas-FACTORIAL'
+	Definir factorial,c,n Como Entero
+	Escribir 'ingrese el numero que desee'
+	Leer n
+	c <- 1
+	Mientras c<=n Hacer
+		factorial <- n*c
+		Escribir factorial
+		c <- c+1
+	FinMientras
+FinFuncion
+
+// EJERCICIO 9
+// Dado un número entero N que representa una contraseña y asumiendo que una
+// contraseña debe tener al menos 10 dígitos para ser segura, determine si la contraseña
+// ingresada por el usuario es correcta, de no serlo debe pedirla nuevamente hasta que tenga
+// los 10 (diez) dígitos solicitados y al ser correcta mostrar un mensaje de éxito al usuario, por
+// salida estándar.
+// esntrada: digitos "como caracter"
+// cantD "como entero"
+// "ingrese los digitos"
+// cantD = longitud(digitos)
+// hasta que cantD > 10 hacer 
+// "la contraseña",cantD,"es segura"
+// fin hasta
+// Repetir
+// "ingrese los digitos"
+// leer digitos
+// cantD = longitud(digitos)
+// Hasta Que cantD > 10
+// escribir "la contraseña",digitos,"es segura"
+Funcion iterativas9()
+	Escribir 'iterativas 9-CONTRASEÑA'
+	Definir contraseña Como Caracter
+	Definir cantD Como Entero
+	Repetir
+		Escribir 'ingrese la contraseña mayor a 10 digitos'
+		Leer contraseña
+		cantD <- longitud(contraseña)
+	Hasta Que cantD>=10
+	Escribir 'la contraseña ingresada',contraseña,' es correcta :)'
+FinFuncion
+
+// EJERCICIO 10 
+// entrada: n, nMayor, nMenor
+// nMEnor=99999
+// nMayor=1
+// n=1
+// mientras n <> 0 Hacer
+// ingrese numero
+// n
+// si n <> 0 y n < nMEnor
+// nMEnor<-n
+// sino si n <> 0 y n > nMayor
+// nMyor<-n
+// FinSi
+// finmientras
+// escribir "el mayor es: ",nMayor
+// escribrii "el menor es:",nMenor
+Funcion iterativas10()
+	Escribir 'iterarivas 10-NUM> NUM<'
+	Definir n,nMayor,nMenor Como Entero
+	nMayor <- 1; nMenor <- 999999
+	n <- 1
+	Mientras n<>0 Hacer
+		Escribir 'ingrese valor'
+		Leer n
+		Si n<>0 Y n<nMenor Entonces
+			nMenor <- n
+		SiNo
+			Si n<>0 Y n>nMayor Entonces
+				nMayor <- n
+			FinSi
+		FinSi
+	FinMientras
+	Escribir 'el numero menor es: ',nMenor
+	Escribir 'el numero mayor es: ',nMayor
+FinFuncion
+
+// EJERCICIO 11
+// Se tiene una secuencia de enteros terminada en cero, que corresponde a la edad, peso y
+// estatura de una muestra de hombres y mujeres mayores de 18 años. Con base en dicha
+// secuencia se desea realizar un estudio a fin de conocer:
+// Edad promedio de todas las personas en la muestra.
+// Peso promedio de todas las personas en la muestra.
+// Estatura promedio de todas las personas en la muestra.
+// Cuántas personas hay con edad entre los 18 y 25 años.
+// Cuántas personas son mayores a 36 años.
+// Cuál es el promedio de peso de las personas con edades entre 18 y 35 años.
+// entrada: n, c, edad, peso, estatura, sum18_35, promedio18_36
+// promE, promP,promEs
+// definir ce
+// c=0;n=1;c2=0;c3=0
+// proceso: mientras n <> 0
+// c=c+1
+// Repetir
+// escribir "ingrese la edad"
+// leer edad
+// Hasta Que edad >= 18
+// escribir "ingrese el peso"
+// escribir "ingrese la estatura"
+// sumE = sumE + edad 
+// sumP = sumP + peso
+// sumES = sumES + estarura
+// si edad >= 18 y edad <= 25
+// c2=c2+1
+// si edad >= 36
+// c3=c3+1
+// si edad >= 18 y edad <= 35
+// c4=c4+1
+// sum18_35 = sum18_35 + peso
+// escribir "ingrese un valor"
+// leer n 
+// fin Mientras
+// promE = sumE/c
+// promP = sumP/c
+// promES = sumES/c
+// promedio del peso entre los 18 a 35
+// prom18_35 = sum18_35/c4
+Funcion iterativas11()
+	Definir n,c,edad,peso,estatura,s18_35,prom18_35 Como Entero
+	Definir promE,promP,promES Como Entero
+	Definir sumaE,sumaP,sumaES Como Entero
+	Definir c2,c3,c4 Como Entero
+	c <- 0; n <- 1; c2 <- 0; c3 <- 0; c4 <- 0; n <- 1
+	sumaE <- 0; sumaP <- 0; sumaES <- 0; s18_35 <- 0
+	Mientras n<>0 Hacer
+		c <- c+1
+		Repetir
+			Escribir 'ingrese la edad'
+			Leer edad
+		Hasta Que edad>=18
+		Escribir 'ingrese el peso'
+		Leer peso
+		Escribir 'ingrese la estatura'
+		Leer estatura
+		sumaE <- sumaE+edad
+		sumaP <- sumaP+peso
+		sumaES <- sumaES+estatura
+		Si edad>=18 Y edad<=25 Entonces
+			c2 <- c2+1
+		FinSi
+		Si edad>=36 Entonces
+			c3 <- c3+1
+		FinSi
+		Si edad>=18 Y edad<=35 Entonces
+			s18_35 <- s18_35+peso
+			c4 <- c4+1
+		FinSi
+		Escribir 'ingrese un numero distinto a 0 para volver a preguntar'
+		escribir "y 0 para terminar"
+		Leer n
+	FinMientras
+	promE <- sumaE/c
+	promP <- sumaP/c
+	promES <- sumaES/c
+	// prom
+	prom18_35 <- s18_35/c4
+	Escribir 'promedio general de las edades: ',promE
+	Escribir 'promedio general de los pesos: ',promP
+	Escribir 'promedio general de las estaturas: ',promES
+	Escribir 'personas entre los 18 a 25: ',c2
+	Escribir 'personas mayores a 35: ',c3
+	Escribir 'promedio de peso de las personas entre 18 a 35: ',prom18_35
+FinFuncion
+
+// EJERCICIO 12
+// Construye un algoritmo que calcule e imprima la tabla de multiplicar, desde la tabla del 1
+// hasta la del 10.
+// entrada: n, ss
+// escribir "ingrese la tabla a multiplicar"
+// leer n
+// para n hasta 10 con paso 1 Hacer
+// c=c+1
+// ss = ss + n
+// escribir n,"*",c,"=",ss
+// FinPara
+Funcion iterativas12()
+	Escribir 'iterativas 12-TABLAS DE MULTIPLICAR'
+	Definir c,ss,n Como Entero
+	c <- 0; ss <- 0
+	Escribir 'ingrese la tabla que desee'
+	Leer n
+	Mientras c<10 Hacer
+		c <- c+1
+		ss <- ss+n
+		Escribir n,'*',c,'=',ss
+	FinMientras
+FinFuncion
+
+// EJERCICIO 13
+// Escribir un algoritmo que multiplique dos números 
+// por medio de sumas sucesivas
+// funcion ejercicio27()
+// definir i, val, suma Como Entero
+// suma=0 
+// para i=1 hasta 10 con paso 1 Hacer
+// escribir i," ingrese valor"
+// leer val
+// suma = suma + val
+// escribir suma
+// FinPara
+// escribir "la suma total es: ",suma
+// FinFuncion
+Funcion iterativas13()
+	Definir n1,c,sm,i Como Entero
+	Escribir 'ingrese el primer numero'
+	Leer n1
+	Escribir 'ingrese la cantidad de veces a multiplicar'
+	Leer c
+	sm <- 0
+	Para i<-1 Hasta c Hacer
+		// s = n1
+		sm <- sm+n1
+		Escribir sm
+	FinPara
+	Escribir n1,'*',c,'=',sm
+FinFuncion
+
+// EJERCICIO 14
+// entrada: n, p, s ,c
+// c=0;n=1;s=0;p=0
+// bukleeee
+// mientras n <> 0 Hacer
+// "ingrese valores"
+// n
+// si n > 1
+// c=c+1
+// s=s+n
+// fin minetras
+// p = s/c
+// escribir "el promedio de los numeros ingresados es: ",p
+Funcion iterativas14()
+	Escribir 'iterarivas 14-PROMEDIO DE N NUMEROS'
+	Definir n,c,s,p Como Real
+	n <- 1; c <- 0; s <- 0; p <- 0
+	Mientras n<>0 Hacer
+		Escribir 'ingrese valores'
+		Leer n
+		Si n>1 Entonces
+			c <- c+1
+			s <- s+n
+		FinSi
+	FinMientras
+	p <- s/c
+	Escribir 'el promedio de los numeros ingresados es: ',p
+FinFuncion
+
+// EJERCICIO 15
+// Escribir un algoritmo que divida dos 
+// números por medio de restas sucesivas.
+Funcion   iterativas15()
+	//   Se solicita al usuario ingresar el "dividendo" y el "divisor". Luego, se inicializa el "cociente" en cero y el "residuo" 
+	//   se establece como el "dividendo" inicial. Dentro del bucle "Mientras", se resta el "divisor" del "residuo" y se incrementa 
+	//   el "cociente" en uno en cada iteración, siempre y cuando el residuo sea mayor o igual que el divisor. 
+	//   Al finalizar el bucle, se muestra el cociente y el residuo obtenidos.
+	
+	Definir dividendo, divisor, cociente, residuo,num1,num2 como Entero
+	
+	Escribir "Ingrese el primer numero:"
+	Leer num1
+	
+	Escribir "Ingrese el segundo numero :"
+	Leer num2
+	
+	cociente <- 0
+	residuo <- num1
+	
+	Mientras residuo >= num2 Hacer
+		residuo <- residuo - num2
+		cociente <- cociente + 1
+	Fin Mientras
+	
+	Escribir "El cociente es:", cociente
+	Escribir "El residuo es:", residuo
+FinFuncion
+
+
+
+// Algoritmo principal del proyecto
+Algoritmo Proyecto
+	Definir menuPrincipal,menuSelectivas,menuCondicionales,menuIterativas,titulo,titulo2,opc,opcn,apcc,apca Como Caracter
+	Definir pos,lim Como Entero
+	Dimension menuPrincipal[4],menuSelectivas[11],menuCondicionales[11],menuIterativas[16]
+	// Arreglo menu principal
+	menuPrincipal[0] <- '  1)Estructuras selectivas'
+	menuPrincipal[1] <- '  2)Estructuras condicionales'
+	menuPrincipal[2] <- '  3)Estructuras Iterativas'
+	menuPrincipal[3] <- '  4)Salir'
+	// arreglo submenu numeros
+	menuSelectivas[0] <- '  1)convierta a expresión matemática'
+	menuSelectivas[1] <- '  2)operadores'
+	menuSelectivas[2] <- '  3)aplicación que calcule la resolvente.'
+	menuSelectivas[3] <- '  4)Mayor o igual'
+	menuSelectivas[4] <- '  5)Dado un (1) número, imprimir 0 si es par y 1 si es impar'
+	menuSelectivas[5] <- '  6)El bit de paridad es'
+	menuSelectivas[6] <- '  7)Binario'
+	menuSelectivas[7] <- '  8)Dado un carácter indicar si es un digito '
+	menuSelectivas[8] <- '  9)Dado dos caracteres indicar si el primer carácter es igual'
+	menuSelectivas[9] <- '  10)Dada una frase cualquiera presentarla en mayúscula y minuscula'
+	menuSelectivas[10] <- '  11)Salir'
+	// arreglos submenu cadenas
+	menuCondicionales[0] <- '  1)año es bisiesto'
+	menuCondicionales[1] <- '  2)Palindroma'
+	menuCondicionales[2] <- '  3)Convertir seundo minutos y horas'
+	menuCondicionales[3] <- '  4)Dadas dos frase indicar la de mayor longitud'
+	menuCondicionales[4] <- '  5)Monto a pagar'
+	menuCondicionales[5] <- '  6)peso y altura de persona'
+	menuCondicionales[6] <- '  7)'
+	menuCondicionales[7] <- '  8)Solicitar un número entre el 1 y el 12 e imprimir el mes correspondiente a dicho número'
+	menuCondicionales[8] <- '  9)Compra y descuento'
+	menuCondicionales[9] <- '  10)Operadores'
+	menuCondicionales[10] <- ' 11)Salir'
+	// arreglo submenu arreglos
+	menuIterativas[0] <- '1)cuántos dígitos tiene dicho número'
+	menuIterativas[1] <- '2)Capicuas'
+	menuIterativas[2] <- '3)Divisores'
+	menuIterativas[3] <- '4)Suma divisores'
+	menuIterativas[4] <- '5)Cantidad divisores'
+	menuIterativas[5] <- '6)Numero perfecto'
+	menuIterativas[6] <- '7)Numero primo'
+	menuIterativas[7] <- '8)iterativas-FACTORIAL'
+	menuIterativas[8] <- '9)representa una contraseña '
+	menuIterativas[9] <- '10)Numero menor y mayor'
+	menuIterativas[10] <- '11)Promedio de edad peso altura por edad'
+	menuIterativas[11] <- '12)Tablas de miltiplicar'
+	menuIterativas[12] <- '13)cantidad de veces a multiplicar'
+	menuIterativas[13] <- '14)PROMEDIO DE N NUMEROS'
+	menuIterativas[14] <- '15)cantidad de veces a dividir'
+	menuIterativas[15] <- '16) Salir'
+	opc <- ''
+	Mientras opc<>'4' Hacer
+		opc <- presentarMenu('Menu Principal',menuPrincipal,4)
+		Segun opc  Hacer
+			'1':
+				opcn <- ''
+				Mientras opcn<>'11' Hacer
+					opcn <- presentarMenu('Menu Selectivas',menuSelectivas,11)
+					Segun opcn  Hacer
+						'1':
+							Escribir 'Ejercicio 1'
+							selectivas1()
+							Esperar 3 Segundos
+						'2':
+							Escribir 'Ejercicio 2'
+							selectivas2()
+							Esperar 3 Segundos
+						'3':
+							Escribir 'Ejercicio 3'
+							selectivas3()
+							Esperar 3 Segundos
+						'4':
+							Escribir 'Ejercicio 4'
+							selectivas4()
+							Esperar 3 Segundos
+						'5':
+							Escribir 'Ejercicio 5'
+							selectivas5()
+							Esperar 3 Segundos
+						'6':
+							Escribir 'Ejercicio 6'
+							selectivas6()
+							Esperar 3 Segundos
+						'7':
+							Escribir 'Ejercicio 7'
+							selectivas7()
+							Esperar 3 Segundos
+						'8':
+							Escribir 'Ejercicio 8'
+							selectivas8()
+							Esperar 3 Segundos
+						'9':
+							Escribir 'Ejercicio 9'
+							selectivas9()
+							Esperar 3 Segundos
+						'10':
+							Escribir 'Ejercicio 10'
+							selectivas10()
+							Esperar 3 Segundos
+						'11':
+							Escribir 'Regresando al Menu Principal'
+							Esperar 3 Segundos
+						De Otro Modo:
+							Escribir 'Opcion invalida...'
+							Esperar 3 Segundos
+					FinSegun
+				FinMientras
+			'2':
+				opcn <- ''
+				Mientras opcn<>'11' Hacer
+					opcn <- presentarMenu('Menu Condicionales',menuCondicionales,11)
+					Segun opcn  Hacer
+						'1':
+							Escribir 'Ejercicio 1'
+							condicional1()
+							Esperar 3 Segundos
+						'2':
+							Escribir 'Ejercicio 2'
+							condicionales2()
+							Esperar 3 Segundos
+						'3':
+							Escribir 'Ejercicio 3'
+							condicionales3_1()
+							Esperar 3 Segundos
+						'4':
+							Escribir 'Ejercicio 4'
+							condicionales4()
+							Esperar 3 Segundos
+						'5':
+							Escribir 'Ejercicio 5'
+							Condicionales5()
+							Esperar 3 Segundos
+						'6':
+							Escribir 'Ejercicio 6'
+							condicionales6()
+							Esperar 3 Segundos
+						'7':
+							Escribir 'Ejercicio 7'
+							condicional7()
+							Esperar 3 Segundos
+						'8':
+							Escribir 'Ejercicio 8'
+							condicionales8()
+							Esperar 3 Segundos
+						'9':
+							Escribir 'Ejercicio 9'
+							condicionales9()
+							Esperar 3 Segundos
+						'10':
+							Escribir 'Ejercicio 10'
+							condicionales10()
+							Esperar 3 Segundos
+						'11':
+							Escribir 'Regresando al Menu Principal'
+							Esperar 3 Segundos
+						De Otro Modo:
+							Escribir 'Opcion invalida...'
+							Esperar 3 Segundos
+					FinSegun
+				FinMientras
+			'3':
+				opcn <- ''
+				Mientras opcn<>'11' Hacer
+					opcn <- presentarMenu('Menu Iterativas',menuIterativas,16)
+					Segun opcn  Hacer
+						'1':
+							Escribir 'Ejercicio 1'
+							iterativas1()
+							Esperar 3 Segundos
+						'2':
+							Escribir 'Ejercicio 2'
+							iterativas2()
+							Esperar 3 Segundos
+						'3':
+							Escribir 'Ejercicio 3'
+							iterativas3()
+							Esperar 3 Segundos
+						'4':
+							Escribir 'Ejercicio 4'
+							iterativa4()
+							Esperar 3 Segundos
+						'5':
+							Escribir 'Ejercicio 5'
+							iterativa5()
+							Esperar 3 Segundos
+						'6':
+							Escribir 'Ejercicio 6'
+							iterativa6()
+							Esperar 3 Segundos
+						'7':
+							Escribir 'Ejercicio 7'
+							iterativa7()
+							Esperar 3 Segundos
+						'8':
+							Escribir 'Ejercicio 8'
+							iterativas8()
+							Esperar 3 Segundos
+						'9':
+							Escribir 'Ejercicio 9'
+							iterativas9()
+							Esperar 3 Segundos
+						'10':
+							Escribir 'Ejercicio 10'
+							iterativas10()
+							Esperar 3 Segundos
+						'11':
+							Escribir 'Ejercicio 11'
+							iterativas11()
+							Esperar 3 Segundos
+						'12':
+							Escribir 'Ejercicio 12'
+							iterativas12()
+							Esperar 3 Segundos
+						'13':
+							Escribir 'Ejercicio 13'
+							iterativas13()
+							Esperar 3 Segundos
+						'14':
+							Escribir 'Ejercicio 14'
+							iterativas14()
+							Esperar 3 Segundos
+						'15':
+							Escribir 'Ejercicio 15'
+							iterativas15()
+							Esperar 3 Segundos
+						'16':
+							Escribir 'Regresando al Menu Principal'
+							Esperar 3 Segundos
+						De Otro Modo:
+							Escribir 'Opcion invalida...'
+							Esperar 3 Segundos
+					FinSegun
+				FinMientras
+			'4':
+				Escribir 'Gracias por usar el Sistema'
+				Esperar 3 Segundos
+		FinSegun
+	FinMientras
+FinAlgoritmo
+
